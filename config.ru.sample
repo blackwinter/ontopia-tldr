@@ -1,0 +1,13 @@
+require 'ontopia/tldr'
+
+Ontopia::TLDR.set(
+  #xtm_file: '...',
+  #dbm_file: '...',
+
+  #document_keys: %w[...],
+  #topic_keys:    %w[...],
+
+  #title: '...'
+)
+
+run Ontopia::TLDR

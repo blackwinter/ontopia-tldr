@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title><%=h title = [settings.title, @title].compact.join(' : ') %></title>
+  <link rel="stylesheet" type="text/css" href="<%= url('/site.css') %>" />
+  <script type="text/javascript" src="<%= url('/site.js') %>"></script>
+</head>
+<body>
+  <h1><%=h title %></h1>
+
+  <div id="header">
+    <%= _a 'Topics',    href: url('/topics') %>    (<%= _a 'XTM', href: url('/xtm') %>) |
+    <%= _a 'Documents', href: url('/documents') %> (<%= _a 'DBM', href: url('/dbm') %>) |
+    <%= _a 'New query', href: url('/') %>
+  <% if @filter && !instance_variable_get("@#{@filter}").empty? %>
+    | <form><input onkeyup="filter(this.value, '<%=h @filter %>');" placeholder="Filter <%=h @filter %>..." /></form>
+  <% end %>
+  </div>
+
+<% if @error %>
+  <p class="error"><%=h @error %></p>
+<% end %>
+
+  <div id="content"><%= yield %></div>
+
+  <br style="clear: both" />
+
+  <div id="footer">
+    <em>powered by</em> <a href="http://ontopia.net">Ontopia</a>
+    <em>and</em> <a href="http://sinatrarb.com">Sinatra</a>
+    -- <a href="http://blackwinter.github.com/ontopia-tldr">ontopia-tldr</a>
+    <strong>v<%= Ontopia::TLDR::VERSION %></strong>
+  </div>
+</body>
+</html>

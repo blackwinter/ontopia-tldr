@@ -1,0 +1,15 @@
+<% unless @documents.empty? %>
+  <p>Documents (<%= @documents.size %>): <%= render_documents %></p>
+<% end %>
+
+<% unless @relations.empty? %>
+  <p>Relations (<%= @relations.size %>): <%= render_topics_hash(@relations) %></p>
+<% end %>
+
+<% unless @roles.empty? %>
+  <p>Roles (<%= @roles.size %>): <%= render_topics_hash(@roles) %></p>
+<% end %>
+
+<% unless @types.empty? %>
+  <p>Types (<%= @types.size %>): <%= render_topics_hash(@types) %></p>
+<% end %>

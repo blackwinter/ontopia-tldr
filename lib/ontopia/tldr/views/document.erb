@@ -1,0 +1,14 @@
+<table>
+<% for k, v in @document %>
+  <tr>
+    <td class="label"><%=h k %>:</td>
+    <td>
+    <% if settings.topic_keys.include?(k) %>
+      <%= Array(v).map { |i| link_to_topic(i) }.join(' | ') %>
+    <% else %>
+      <%=h Array(v).join(' | ') %>
+    <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

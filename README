@@ -1,0 +1,112 @@
+= ontopia-tldr - Tolog Document Retrieval with Ontopia
+
+== VERSION
+
+This documentation refers to ontopia-tldr version 0.0.1
+
+
+== DESCRIPTION
+
+Ontopia::TLDR is an attempt at bridging the gap between the worlds of formal
+knowledge representation (ontologies, topic maps, etc.) and bibliographic document
+retrieval (bibliographic databases). It allows for retrieving documents from
+bibliographic databases (currently, only Midos[http://progris.de] databases are
+supported) by means of tolog[http://ontopia.net/omnigator/docs/query/tutorial.html],
+Ontopia's[http://ontopia.net] topic map query language.
+
+=== Deployment
+
+Ontopia::TLDR comes as a Sinatra application, so all the standard deployment
+options apply (rackup, Passenger[https://www.phusionpassenger.com/], etc.).
+However, in order to allow for maximum flexibility, you need to supply your
+own <tt>config.ru</tt> file; e.g. (see Ontopia::TLDR for available options):
+
+  require 'ontopia/tldr'
+
+  Ontopia::TLDR.set(
+    dbm_file: File.expand_path('../tldr.dbm', __FILE__),
+    xtm_file: File.expand_path('../tldr.xtm', __FILE__),
+
+    document_keys: %w[YOUR DOCUMENT KEYS],
+    topic_keys:    %w[YOUR TOPIC KEYS],
+
+    title: 'YOUR TITLE'
+  )
+
+  run Ontopia::TLDR
+
+Assuming the following directory layout:
+
+  /srv/tldr
+    |
+    +-- config.ru
+    |
+    +-- tldr.dbm
+    |
+    +-- tldr.xtm
+    |
+    +-- tmp/
+
+Place your database and topic map files there and adjust their paths in the
+<tt>config.ru</tt> file. The <tt>tmp/</tt> directory is used by Passenger
+for the <tt>restart.txt</tt> file.
+
+To deploy Ontopia::TLDR with Passenger on Apache, create a symlink in the
+DocumentRoot pointing to the app's <tt>public/</tt> directory (this example
+makes use of current_gem[http://blackwinter.github.com/current_gem]; adjust
+the paths according to your environment):
+
+  /var/www
+    |
+    +-- tldr -> /usr/local/jruby/lib/ruby/gems/shared/current/ontopia-tldr/lib/ontopia/tldr/public
+
+Then put the following snippet in Apache's VirtualHost configuration:
+
+  <VirtualHost *:80>
+    ...
+
+    RackBaseURI /tldr
+    <Directory /var/www/tldr>
+      Options -MultiViews
+      PassengerAppRoot /srv/tldr  # <-- This (non-standard) line is important
+    </Directory>
+  </VirtualHost>
+
+
+== SUPPORTED PLATFORMS
+
+Ontopia::TLDR requires JRuby[http://jruby.org]. It has been tested with jruby
+1.7.4 (1.9.3p392) on OpenJDK 64-Bit Server VM 1.6.0_27-b27 [linux-amd64].
+
+
+== LINKS
+
+<b></b>
+Documentation:: http://blackwinter.github.com/ontopia-tldr
+Source code::   http://github.com/blackwinter/ontopia-tldr
+RubyGem::       http://rubygems.org/gems/ontopia-tldr
+Ontopia::       http://ontopia.net/
+Demo::          http://ixtrieve.fh-koeln.de/ghn
+
+
+== AUTHORS
+
+* Jens Wille <mailto:jens.wille@gmail.com>
+
+
+== LICENSE AND COPYRIGHT
+
+Copyright (C) 2013 Jens Wille
+
+ontopia-tldr is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+ontopia-tldr is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with ontopia-tldr. If not, see <http://www.gnu.org/licenses/>.

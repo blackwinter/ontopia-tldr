@@ -1,0 +1,61 @@
+body {
+  font-family:    sans-serif;
+}
+
+th, td {
+  vertical-align: top;
+}
+
+#content td strong {
+  font-family:    monospace;
+}
+
+#content td.label {
+  font-family:    monospace;
+  text-align:     right;
+}
+
+#header {
+  margin:         1em 0;
+}
+
+#header form {
+  display:        inline;
+}
+
+#content form {
+  float:          left;
+  width:          45%;
+}
+
+#content form > pre {
+  margin-top:     0;
+}
+
+#content form + div {
+  margin-left:    45%;
+  padding-left:   1em;
+  border-left:    1px solid black;
+}
+
+.error {
+  color:          red;
+}
+
+.debug {
+  color:          gray;
+  font-size:      80%;
+  overflow:       auto;
+}
+
+#footer {
+  border-style:     solid;
+  border-color:     black;
+  border-width:     1px 0;
+  padding:          4px;
+  margin-top:       2em;
+}
+
+#footer a {
+  font-weight:      bold;
+}

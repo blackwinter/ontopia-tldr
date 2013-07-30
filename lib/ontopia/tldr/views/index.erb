@@ -1,0 +1,52 @@
+<script type="text/javascript">
+<% for name, value in settings.tolog_sample %>
+  _sample['<%=h name %>'] = decodeURI('<%= value.tr("'", '"').gsub("\n", '%0A') %>');
+<% end %>
+</script>
+
+<form action="<%= url('/') %>" method="POST">
+  <pre><%= h(settings.tolog) % [
+    %Q{<strong>#{h(settings.title_rules)}</strong>},
+    %Q{<strong>$</strong><input type="text" name="p" size="4" value="#{h(@param || settings.title_topic)}" />},
+    %Q{<strong>#{h(settings.title_query)}</strong>}
+  ] %></pre>
+  <table>
+    <tr>
+      <td colspan="2">
+        <strong><%=h settings.title_query %></strong> [<a href="javascript:sample('q')">sample</a>]:<br />
+        <textarea name="q" rows="10" cols="50"><%=h @query %></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <strong><%=h settings.title_rules %></strong> [<a href="javascript:sample('r')">sample</a>]:<br />
+        <textarea name="r" rows="10" cols="50"><%=h @rules %></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        [ <a href="http://ontopia.net/omnigator/docs/query/tutorial.html" target="_blank">tolog tutorial</a> |
+          <a href="http://ontopia.net/omnigator/docs/query/predicate-reference.html" target="_blank">tolog reference</a> ]
+      </td>
+      <td align="right">
+        <input type="submit" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+<% if @query && !@error %>
+<div>
+<% if @topics %>
+  <p>Topics (<%= @topics.size %>): <%= render_topics %></p>
+
+<% if @documents %>
+  <p>Documents (<%= @documents.size %>): <%= render_documents %></p>
+<% else %>
+  <p class="error">No matching documents found!</p>
+<% end %>
+<% else %>
+  <p class="error">No matching topics found!</p>
+<% end %>
+</div>
+<% end %>
