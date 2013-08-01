@@ -68,7 +68,8 @@ Then put the following snippet in Apache's VirtualHost configuration:
     RackBaseURI /tldr
     <Directory /var/www/tldr>
       Options -MultiViews
-      PassengerAppRoot /srv/tldr  # <-- This (non-standard) line is important
+      PassengerAppRoot /srv/tldr                # <-- This (non-standard) line is important
+      PassengerRuby /usr/local/jruby/bin/jruby  # <-- And this one sets the Ruby interpreter to JRuby
     </Directory>
   </VirtualHost>
 
