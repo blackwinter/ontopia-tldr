@@ -2,6 +2,10 @@
 
 = Revision history for ontopia-tldr
 
+== 0.0.3 [2013-10-24]
+
+* Fixed sample link display.
+
 == 0.0.2 [2013-10-24]
 
 * Only show sample link when sample present.
