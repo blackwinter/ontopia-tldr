@@ -1,92 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>File: README [ontopia-tldr Application documentation (v0.0.3)]</title>
+<title>README - ontopia-tldr Application documentation (v0.0.3)</title>
 
-  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
-  <script src="./js/jquery.js" type="text/javascript"
-    charset="utf-8"></script>
-  <script src="./js/thickbox-compressed.js" type="text/javascript"
-    charset="utf-8"></script>
-  <script src="./js/quicksearch.js" type="text/javascript"
-    charset="utf-8"></script>
-  <script src="./js/darkfish.js" type="text/javascript"
-    charset="utf-8"></script>
-</head>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
 
 <body class="file">
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="./index.html">Home</a>
-          <a href="./index.html#classes">Classes</a>
-          <a href="./index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="./COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="./ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="./README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
 
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class Index
-          <span class="search-toggle"><img src="./images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-        <ul class="link-list">
-        
-          <li><a href="./Ontopia.html">Ontopia</a></li>
-        
-          <li><a href="./Ontopia/TLDR.html">Ontopia::TLDR</a></li>
-        
-          <li><a href="./Ontopia/TLDR/Version.html">Ontopia::TLDR::Version</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-      
-    </div>
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-ontopia-tldr+-+Tolog+Document+Retrieval+with+Ontopia">ontopia-tldr - Tolog Document Retrieval with Ontopia</a>
+      <li><a href="#label-VERSION">VERSION</a>
+      <li><a href="#label-DESCRIPTION">DESCRIPTION</a>
+      <li><a href="#label-Deployment">Deployment</a>
+      <li><a href="#label-SUPPORTED+PLATFORMS">SUPPORTED PLATFORMS</a>
+      <li><a href="#label-LINKS">LINKS</a>
+      <li><a href="#label-AUTHORS">AUTHORS</a>
+      <li><a href="#label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Ontopia.html">Ontopia</a>
+  
+    <li><a href="./Ontopia/TLDR.html">Ontopia::TLDR</a>
+  
+    <li><a href="./Ontopia/TLDR/ERB.html">Ontopia::TLDR::ERB</a>
+  
+    <li><a href="./Ontopia/TLDR/Nuggets.html">Ontopia::TLDR::Nuggets</a>
+  
+    <li><a href="./Ontopia/TLDR/Nuggets/Midos.html">Ontopia::TLDR::Nuggets::Midos</a>
+  
+    <li><a href="./Ontopia/TLDR/Version.html">Ontopia::TLDR::Version</a>
+  
+    <li><a href="./Ontopia/Topicmaps.html">Ontopia::Topicmaps</a>
+  
+  </ul>
+</nav>
+
   </div>
+</nav>
 
-  <div id="documentation">
-    
-<h1>ontopia-tldr - Tolog Document Retrieval with <a href="Ontopia.html">Ontopia</a></h1>
+<div id="documentation" class="description">
+  
+<h1 id="label-ontopia-tldr+-+Tolog+Document+Retrieval+with+Ontopia">ontopia-tldr - Tolog Document Retrieval with <a href="Ontopia.html">Ontopia</a><span><a href="#label-ontopia-tldr+-+Tolog+Document+Retrieval+with+Ontopia">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<h2>VERSION</h2>
+<h2 id="label-VERSION">VERSION<span><a href="#label-VERSION">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>This documentation refers to ontopia-tldr version 0.0.3</p>
 
-<h2>DESCRIPTION</h2>
+<h2 id="label-DESCRIPTION">DESCRIPTION<span><a href="#label-DESCRIPTION">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p><a href="Ontopia/TLDR.html">Ontopia::TLDR</a> is an attempt at bridging the
 gap between the worlds of formal knowledge representation (ontologies,
@@ -95,30 +118,31 @@ databases). It allows for retrieving documents from bibliographic databases
 (currently, only <a href="http://progris.de">Midos</a> databases are
 supported) by means of <a
 href="http://ontopia.net/omnigator/docs/query/tutorial.html">tolog</a>, <a
-href="http://ontopia.net">Ontopia's</a> topic map query language.</p>
+href="http://ontopia.net">Ontopia’s</a> topic map query language.</p>
 
-<h3>Deployment</h3>
+<h3 id="label-Deployment">Deployment<span><a href="#label-Deployment">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p><a href="Ontopia/TLDR.html">Ontopia::TLDR</a> comes as a Sinatra
 application, so all the standard deployment options apply (rackup, <a
 href="https://www.phusionpassenger.com/">Passenger</a>, etc.). However, in
 order to allow for maximum flexibility, you need to supply your own
-<tt>config.ru</tt> file; e.g. (see <a
+<code>config.ru</code> file; e.g. (see <a
 href="Ontopia/TLDR.html">Ontopia::TLDR</a> for available options):</p>
 
-<pre>require 'ontopia/tldr'
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;ontopia/tldr&#39;</span>
 
-Ontopia::TLDR.set(
-  dbm_file: File.expand_path('../tldr.dbm', __FILE__),
-  xtm_file: File.expand_path('../tldr.xtm', __FILE__),
+<span class="ruby-constant">Ontopia</span><span class="ruby-operator">::</span><span class="ruby-constant">TLDR</span>.<span class="ruby-identifier">set</span>(
+  <span class="ruby-identifier">dbm_file</span><span class="ruby-operator">:</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&#39;../tldr.dbm&#39;</span>, <span class="ruby-keyword">__FILE__</span>),
+  <span class="ruby-identifier">xtm_file</span><span class="ruby-operator">:</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&#39;../tldr.xtm&#39;</span>, <span class="ruby-keyword">__FILE__</span>),
 
-  document_keys: %w[YOUR DOCUMENT KEYS],
-  topic_keys:    %w[YOUR TOPIC KEYS],
+  <span class="ruby-identifier">document_keys</span><span class="ruby-operator">:</span> <span class="ruby-node">%w[YOUR DOCUMENT KEYS]</span>,
+  <span class="ruby-identifier">topic_keys</span><span class="ruby-operator">:</span>    <span class="ruby-node">%w[YOUR TOPIC KEYS]</span>,
 
-  title: 'YOUR TITLE'
+  <span class="ruby-identifier">title</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;YOUR TITLE&#39;</span>
 )
 
-run Ontopia::TLDR</pre>
+<span class="ruby-identifier">run</span> <span class="ruby-constant">Ontopia</span><span class="ruby-operator">::</span><span class="ruby-constant">TLDR</span>
+</pre>
 
 <p>Assuming the following directory layout:</p>
 
@@ -133,12 +157,12 @@ run Ontopia::TLDR</pre>
   +-- tmp/</pre>
 
 <p>Place your database and topic map files there and adjust their paths in the
-<tt>config.ru</tt> file. The <tt>tmp/</tt> directory is used by Passenger
-for the <tt>restart.txt</tt> file.</p>
+<code>config.ru</code> file. The <code>tmp/</code> directory is used by
+Passenger for the <code>restart.txt</code> file.</p>
 
 <p>To deploy <a href="Ontopia/TLDR.html">Ontopia::TLDR</a> with Passenger on
-Apache, create a symlink in the DocumentRoot pointing to the app’s
-<tt>public/</tt> directory (this example makes use of <a
+Apache, create a symlink in the DocumentRoot pointing to the app&#39;s
+<code>public/</code> directory (this example makes use of <a
 href="http://blackwinter.github.com/current_gem">current_gem</a>; adjust
 the paths according to your environment):</p>
 
@@ -146,7 +170,7 @@ the paths according to your environment):</p>
   |
   +-- tldr -&gt; /usr/local/jruby/lib/ruby/gems/shared/current/ontopia-tldr/lib/ontopia/tldr/public</pre>
 
-<p>Then put the following snippet in Apache’s VirtualHost configuration:</p>
+<p>Then put the following snippet in Apache&#39;s VirtualHost configuration:</p>
 
 <pre>&lt;VirtualHost *:80&gt;
   ...
@@ -159,42 +183,42 @@ the paths according to your environment):</p>
   &lt;/Directory&gt;
 &lt;/VirtualHost&gt;</pre>
 
-<h2>SUPPORTED PLATFORMS</h2>
+<h2 id="label-SUPPORTED+PLATFORMS">SUPPORTED PLATFORMS<span><a href="#label-SUPPORTED+PLATFORMS">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p><a href="Ontopia/TLDR.html">Ontopia::TLDR</a> requires <a
 href="http://jruby.org">JRuby</a>. It has been tested with jruby 1.7.4
 (1.9.3p392) on OpenJDK 64-Bit Server VM 1.6.0_27-b27 [linux-amd64].</p>
 
-<h2>LINKS</h2>
+<h2 id="label-LINKS">LINKS<span><a href="#label-LINKS">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p></p>
-<table class="rdoc-list"><tr><td class="rdoc-term"><p>Documentation</p></td>
-<td>
+<dl class="rdoc-list note-list"><dt>Documentation
+<dd>
 <p><a
 href="http://blackwinter.github.com/ontopia-tldr">blackwinter.github.com/ontopia-tldr</a></p>
-</td></tr><tr><td class="rdoc-term"><p>Source code</p></td>
-<td>
+</dd><dt>Source code
+<dd>
 <p><a
 href="http://github.com/blackwinter/ontopia-tldr">github.com/blackwinter/ontopia-tldr</a></p>
-</td></tr><tr><td class="rdoc-term"><p>RubyGem</p></td>
-<td>
+</dd><dt>RubyGem
+<dd>
 <p><a
 href="http://rubygems.org/gems/ontopia-tldr">rubygems.org/gems/ontopia-tldr</a></p>
-</td></tr><tr><td class="rdoc-term"><p><a href="Ontopia.html">Ontopia</a></p></td>
-<td>
-<p><a href="http://ontopia.net/">ontopia.net/</a></p>
-</td></tr><tr><td class="rdoc-term"><p>Demo</p></td>
-<td>
+</dd><dt><a href="Ontopia.html">Ontopia</a>
+<dd>
+<p><a href="http://ontopia.net">ontopia.net</a>/</p>
+</dd><dt>Demo
+<dd>
 <p><a href="http://ixtrieve.fh-koeln.de/ghn">ixtrieve.fh-koeln.de/ghn</a></p>
-</td></tr></table>
+</dd></dl>
 
-<h2>AUTHORS</h2>
+<h2 id="label-AUTHORS">AUTHORS<span><a href="#label-AUTHORS">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <ul><li>
 <p>Jens Wille &lt;<a
 href="mailto:jens.wille@gmail.com">jens.wille@gmail.com</a>&gt;</p>
 </li></ul>
 
-<h2>LICENSE AND COPYRIGHT</h2>
+<h2 id="label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT<span><a href="#label-LICENSE+AND+COPYRIGHT">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Copyright (C) 2013 Jens Wille</p>
 
@@ -210,15 +234,15 @@ for more details.</p>
 
 <p>You should have received a copy of the GNU Affero General Public License
 along with ontopia-tldr. If not, see &lt;<a
-href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/&gt;.</p>
 
-  </div>
+</div>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
-</body>
-</html>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 
