@@ -351,6 +351,12 @@ select $TYPE, $TOPIC from
       _a(doc_to_s(id, doc), href: url("/document/#{h(id)}"))
     end
 
+    def sample_link(name)
+      if settings.tolog_sample[name]
+        %Q{ [#{_a(:sample, href: "javascript:sample('#{name}')")}]}
+      end
+    end
+
     def _a(*args)
       _tag(:a, *args)
     end
