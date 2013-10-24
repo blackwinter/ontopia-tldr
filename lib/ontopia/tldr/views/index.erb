@@ -13,13 +13,13 @@
   <table>
     <tr>
       <td colspan="2">
-        <strong><%=h settings.title_query %></strong><%= sample_link('q') %>:<br />
+        <strong><%=h settings.title_query %></strong><%= sample_link(:q) %>:<br />
         <textarea name="q" rows="10" cols="50"><%=h @query %></textarea>
       </td>
     </tr>
     <tr>
       <td colspan="2">
-        <strong><%=h settings.title_rules %></strong><%= sample_link('r') %>:<br />
+        <strong><%=h settings.title_rules %></strong><%= sample_link(:r) %>:<br />
         <textarea name="r" rows="10" cols="50"><%=h @rules %></textarea>
       </td>
     </tr>
