@@ -2,6 +2,12 @@
 
 = Revision history for ontopia-tldr
 
+== 0.0.2 [2013-10-24]
+
+* Only show sample link when sample present.
+* Added alternative filter implementation.
+* Updated README.
+
 == 0.0.1 [2013-07-30]
 
 * Birthday :-)
