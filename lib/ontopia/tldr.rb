@@ -301,13 +301,16 @@ select $TYPE, $TOPIC from
 
     def render_topics(topics = @topics)
       _ul(topics.sort, id: :topics) { |topic|
-        _li(link_to_topic(topic), ' (', settings.topic_index[topic].size, ')')
+        _li(link_to_topic(topic),
+          ' (', settings.topic_index[topic].size, ')',
+          'data-index' => topic_to_s(topic).downcase)
       }
     end
 
     def render_documents(documents = @documents)
       _ul(documents.sort_by { |k,| k }, id: :documents) { |id, doc|
-        _li(link_to_document(id, doc))
+        _li(link_to_document(id, doc),
+          'data-index' => doc_to_s(id, doc).downcase)
       }
     end
 
