@@ -45,7 +45,7 @@ Assuming the following directory layout:
     |
     +-- tldr.xtm
     |
-    +-- tmp/
+    `-- tmp/
 
 Place your database and topic map files there and adjust their paths in the
 <tt>config.ru</tt> file. The <tt>tmp/</tt> directory is used by Passenger
@@ -58,7 +58,7 @@ the paths according to your environment):
 
   /var/www
     |
-    +-- tldr -> /usr/local/jruby/lib/ruby/gems/shared/current/ontopia-tldr/lib/ontopia/tldr/public
+    `-- tldr -> /usr/local/jruby/lib/ruby/gems/shared/current/ontopia-tldr/lib/ontopia/tldr/public
 
 Then put the following snippet in Apache's VirtualHost configuration:
 

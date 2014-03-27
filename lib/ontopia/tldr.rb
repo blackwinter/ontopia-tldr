@@ -61,21 +61,19 @@ module Ontopia
     end
 
     set :dbm do
-      @__dbm__ ||= begin
-        dbm, topic_keys = {}, settings.topic_keys
+      @__dbm__ ||= {}.tap { |dbm|
+        topic_keys = settings.topic_keys
 
         topic_index = Hash.new { |h, k| h[k] = {} }
         dbm.define_singleton_method(:topic_index) { topic_index }
 
-        Nuggets::Midos::Parser.parse_file(settings.dbm_file, settings.dbm_opts) { |id, doc|
+        Nuggets::Midos::Reader.parse_file(settings.dbm_file, settings.dbm_opts) { |id, doc|
           unless (topics = doc.values_at(*topic_keys).compact).empty?
             dbm[id] = doc
             topics.flatten.each { |topic| topic_index[topic][id] = doc }
           end
         }
-
-        dbm
-      end
+      }
     end
 
     set :topics do
@@ -93,7 +91,7 @@ module Ontopia
 
     set :xtm_file, File.expand_path('../tldr.xtm', __FILE__)
     set :dbm_file, File.expand_path('../tldr.dbm', __FILE__)
-    set :dbm_opts, { encoding: 'utf-8', vs: '|' }
+    set :dbm_opts, { encoding: 'utf-8' }
 
     set :tolog, <<-EOT
 import "http://psi.ontopia.net/tolog/string/" as s
