@@ -24,8 +24,8 @@
 #++
 
 require 'json'
+require 'midos'
 require 'sinatra/base'
-require 'nuggets/midos'
 require 'ontopia/topicmaps'
 
 module Ontopia
@@ -67,7 +67,7 @@ module Ontopia
         topic_index = Hash.new { |h, k| h[k] = {} }
         dbm.define_singleton_method(:topic_index) { topic_index }
 
-        Nuggets::Midos::Reader.parse_file(settings.dbm_file, settings.dbm_opts) { |id, doc|
+        Midos::Reader.parse_file(settings.dbm_file, settings.dbm_opts) { |id, doc|
           unless (topics = doc.values_at(*topic_keys).compact).empty?
             dbm[id] = doc
             topics.flatten.each { |topic| topic_index[topic][id] = doc }

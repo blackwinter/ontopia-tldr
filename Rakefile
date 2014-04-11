@@ -13,7 +13,7 @@ begin
       :license      => %q{AGPL-3.0},
       :homepage     => :blackwinter,
       :platform     => 'java',
-      :dependencies => %w[json ontopia-topicmaps ruby-nuggets sinatra],
+      :dependencies => %w[json midos ontopia-topicmaps sinatra],
       :extra_files  => FileList['*.sample', 'lib/ontopia/tldr/{public,views}/*'].to_a
     }
   }}
