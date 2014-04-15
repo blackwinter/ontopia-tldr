@@ -5,7 +5,7 @@
 #                                                                             #
 # ontopia-tldr -- Tolog Document Retrieval with Ontopia.                      #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # ontopia-tldr is free software: you can redistribute it and/or modify it     #
 # under the terms of the GNU Affero General Public License as published by    #
@@ -25,43 +25,25 @@
 
 require 'json'
 require 'midos'
-require 'sinatra/base'
+require 'sinatra/bells'
 require 'ontopia/topicmaps'
 
 module Ontopia
-  class TLDR < Sinatra::Base
 
-    class << self
+  class TLDR < Sinatra::Bells
 
-      private
+    set_root __FILE__
 
-      def jget(*a, &b)
-        jroute(:get, *a, &b)
-      end
-
-      def jpost(*a, &b)
-        jroute(:post, *a, &b)
-      end
-
-      def jroute(m, r, t, &b)
-        e = 'json'; e.prepend('.') unless r.end_with?('/')
-        send(m, "#{r}#{e}")         { instance_eval(&b); do_json }
-        send(m, r, provides: :html) { instance_eval(&b); erb(t) }
-        send(m, r, provides: :json) { instance_eval(&b); do_json }
-      end
-
-    end
-
-    set :root, __FILE__.chomp('.rb')
+    set :default_render, { json: :render_json }
 
     set :otm do
-      @__otm__ ||= Ontopia::Topicmaps::Topicmap.new(settings.xtm_file).tap {
+      Ontopia::Topicmaps::Topicmap.new(settings.xtm_file).tap {
         Ontopia::Topicmaps.default_stringifier = :id
       }
     end
 
     set :dbm do
-      @__dbm__ ||= {}.tap { |dbm|
+      {}.tap { |dbm|
         topic_keys = settings.topic_keys
 
         topic_index = Hash.new { |h, k| h[k] = {} }
@@ -77,11 +59,11 @@ module Ontopia
     end
 
     set :topics do
-      @__topics__ ||= settings.otm.topics(:name)
+      settings.otm.topics(:name)
     end
 
     set :topic_index do
-      @__topic_index__ ||= settings.dbm.topic_index
+      settings.dbm.topic_index
     end
 
     set :document_keys, %w[]
@@ -182,8 +164,6 @@ select $TYPE, $TOPIC from
       EOT
     }
 
-    helpers ERB::Util
-
     not_found do
       @error = 'Not found!'
       erb ''
@@ -193,7 +173,7 @@ select $TYPE, $TOPIC from
       erb :index
     end
 
-    jpost '/', :index do
+    post '/', render: :index do
       @query = params[:q]
       @rules = params[:r] || ''
       @param = params[:p] || TITLE_TOPIC
@@ -212,15 +192,15 @@ select $TYPE, $TOPIC from
     end
 
     get '/xtm' do
-      do_file(settings.xtm_file, 'xml')
+      send_file(settings.xtm_file, 'xml')
     end
 
-    jget '/topics', :topics do
+    get '/topics', render: :topics do
       @title = "Topics (#{settings.topics.size})"
       @topics, @filter = settings.topics.keys, :topics
     end
 
-    jget '/topic/:i', :topic do
+    get '/topic/:i', render: :topic do
       @title = topic_to_s(@topic = params[:i])
       not_found unless settings.topics.include?(@topic)
 
@@ -233,25 +213,23 @@ select $TYPE, $TOPIC from
     end
 
     get '/dbm' do
-      do_file(settings.dbm_file, 'txt')
+      send_file(settings.dbm_file, 'txt')
     end
 
-    jget '/documents', :documents do
+    get '/documents', render: :documents do
       @title = "Documents (#{settings.dbm.size})"
       @documents, @filter = settings.dbm, :documents
     end
 
-    jget '/document/:i', :document do
+    get '/document/:i', render: :document do
       @title = "##{@id = params[:i].to_i}"
       not_found unless @document = settings.dbm[@id]
     end
 
     private
 
-    def do_json
-      content_type :json
-
-      JSON.fast_generate({
+    def to_render_hash
+      super(
         d: @document || @documents,
         e: @error,
         i: @id,
@@ -262,11 +240,7 @@ select $TYPE, $TOPIC from
         r: @rules,
         t: @topic || @topics,
         y: @types
-      }.delete_if { |_, v| !v })
-    end
-
-    def do_file(file, type)
-      File.readable?(file) ? send_file(file, type: type) : not_found
+      )
     end
 
     def get_topics(query = @query, param = @param, rules = @rules)
@@ -342,11 +316,11 @@ select $TYPE, $TOPIC from
     end
 
     def link_to_topic(topic, text = topic_to_s(topic))
-      _a(text, href: url("/topic/#{h(topic)}"))
+      link_to(text, :topic, topic)
     end
 
     def link_to_document(id, doc)
-      _a(doc_to_s(id, doc), href: url("/document/#{h(id)}"))
+      link_to(doc_to_s(id, doc), :document, id)
     end
 
     def sample_link(name)
@@ -355,31 +329,8 @@ select $TYPE, $TOPIC from
       end
     end
 
-    def _a(*args)
-      _tag(:a, *args)
-    end
-
-    def _ul(list, *args)
-      _tag(:ul, *args) { |t| list.each { |*i| t << yield(*i) } }
-    end
-
-    def _li(*args)
-      _tag(:li, *args)
-    end
-
-    def _tag(name, *args)
-      a = args.pop.map { |k, v| %Q{#{h(k)}="#{h(v)}"} } if args.last.is_a?(Hash)
-
-      t = ["<#{name}#{a.unshift(nil).join(' ') if a}>"]
-
-      args.each { |s| t << s }
-      yield t if block_given?
-
-      t << "</#{name}>"
-      t.join
-    end
-
   end
+
 end
 
 require_relative 'tldr/version'
