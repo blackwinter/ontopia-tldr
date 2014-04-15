@@ -2,95 +2,76 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.0.3)</title>
+<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.0.4)</title>
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
     <a href="../table_of_contents.html#classes">Classes</a>
     <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/ontopia/tldr.rb
-    <li>lib/ontopia/tldr/version.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
-  <p class="link">Sinatra::Base
+  <p class="link">Sinatra::Bells
   
-</nav>
+</div>
 
     
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
-    
-    <li ><a href="#method-c-jget">::jget</a>
-    
-    <li ><a href="#method-c-jpost">::jpost</a>
-    
-    <li ><a href="#method-c-jroute">::jroute</a>
-    
-    <li ><a href="#method-i-_a">#_a</a>
-    
-    <li ><a href="#method-i-_li">#_li</a>
-    
-    <li ><a href="#method-i-_tag">#_tag</a>
-    
-    <li ><a href="#method-i-_ul">#_ul</a>
-    
-    <li ><a href="#method-i-do_file">#do_file</a>
-    
-    <li ><a href="#method-i-do_json">#do_json</a>
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-i-doc_to_s">#doc_to_s</a>
     
@@ -112,59 +93,24 @@
     
     <li ><a href="#method-i-sample_link">#sample_link</a>
     
+    <li class="calls-super" ><a href="#method-i-to_render_hash">#to_render_hash</a>
+    
     <li ><a href="#method-i-topic_to_s">#topic_to_s</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../COPYING.html">COPYING</a>
-  
-    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
-  
-    <li class="file"><a href="../README.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../Ontopia.html">Ontopia</a>
-  
-    <li><a href="../Ontopia/TLDR.html">Ontopia::TLDR</a>
-  
-    <li><a href="../Ontopia/TLDR/ERB.html">Ontopia::TLDR::ERB</a>
-  
-    <li><a href="../Ontopia/TLDR/Nuggets.html">Ontopia::TLDR::Nuggets</a>
-  
-    <li><a href="../Ontopia/TLDR/Nuggets/Midos.html">Ontopia::TLDR::Nuggets::Midos</a>
-  
-    <li><a href="../Ontopia/TLDR/Version.html">Ontopia::TLDR::Version</a>
-  
-    <li><a href="../Ontopia/Topicmaps.html">Ontopia::Topicmaps</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Ontopia::TLDR</h1>
+<main role="main" aria-labelledby="class-Ontopia::TLDR">
+  <h1 id="class-Ontopia::TLDR" class="class">
+    class Ontopia::TLDR
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -175,14 +121,15 @@
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
       
         <dt id="VERSION">VERSION
         
-        <dd class="description">
+        <dd>
         
       
       </dl>
@@ -191,337 +138,11 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="private-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Private Class Methods</h3>
-
-    
-      <div id="method-c-jget" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">jget</span><span
-            class="method-args">(*a, &b)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="jget-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 37</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">jget</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">jroute</span>(<span class="ruby-value">:get</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- jget-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- jget-method -->
-
-    
-      <div id="method-c-jpost" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">jpost</span><span
-            class="method-args">(*a, &b)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="jpost-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 41</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">jpost</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">jroute</span>(<span class="ruby-value">:post</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- jpost-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- jpost-method -->
-
-    
-      <div id="method-c-jroute" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">jroute</span><span
-            class="method-args">(m, r, t, &b)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="jroute-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 45</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">jroute</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">t</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
-  <span class="ruby-identifier">e</span> = <span class="ruby-string">&#39;json&#39;</span>; <span class="ruby-identifier">e</span>.<span class="ruby-identifier">prepend</span>(<span class="ruby-string">&#39;.&#39;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">end_with?</span>(<span class="ruby-string">&#39;/&#39;</span>)
-  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-node">&quot;#{r}#{e}&quot;</span>)         { <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>); <span class="ruby-identifier">do_json</span> }
-  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">provides</span><span class="ruby-operator">:</span> <span class="ruby-value">:html</span>) { <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>); <span class="ruby-identifier">erb</span>(<span class="ruby-identifier">t</span>) }
-  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">provides</span><span class="ruby-operator">:</span> <span class="ruby-value">:json</span>) { <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>); <span class="ruby-identifier">do_json</span> }
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- jroute-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- jroute-method -->
-
-    
-    </section><!-- private-class-method-details -->
-  
-     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Private Instance Methods</h3>
-
-    
-      <div id="method-i-_a" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">_a</span><span
-            class="method-args">(*args)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="_a-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 359</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">_a</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">_tag</span>(<span class="ruby-value">:a</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- _a-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- _a-method -->
-
-    
-      <div id="method-i-_li" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">_li</span><span
-            class="method-args">(*args)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="_li-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 367</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">_li</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">_tag</span>(<span class="ruby-value">:li</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- _li-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- _li-method -->
-
-    
-      <div id="method-i-_tag" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">_tag</span><span
-            class="method-args">(name, *args) { |t| ... }</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="_tag-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 371</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">%Q{#{h(k)}=&quot;#{h(v)}&quot;}</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
-
-  <span class="ruby-identifier">t</span> = [<span class="ruby-node">&quot;&lt;#{name}#{a.unshift(nil).join(&#39; &#39;) if a}&gt;&quot;</span>]
-
-  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span> }
-  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">t</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-
-  <span class="ruby-identifier">t</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;/#{name}&gt;&quot;</span>
-  <span class="ruby-identifier">t</span>.<span class="ruby-identifier">join</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- _tag-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- _tag-method -->
-
-    
-      <div id="method-i-_ul" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">_ul</span><span
-            class="method-args">(list, *args) { |*i| ... }</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="_ul-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 363</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">list</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">_tag</span>(<span class="ruby-value">:ul</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">i</span>) } }
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- _ul-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- _ul-method -->
-
-    
-      <div id="method-i-do_file" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">do_file</span><span
-            class="method-args">(file, type)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="do_file-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 269</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_file</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">type</span>)
-  <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">send_file</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">type</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">not_found</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- do_file-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- do_file-method -->
-
-    
-      <div id="method-i-do_json" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">do_json</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="do_json-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 252</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_json</span>
-  <span class="ruby-identifier">content_type</span> <span class="ruby-value">:json</span>
-
-  <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">fast_generate</span>({
-    <span class="ruby-identifier">d</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@document</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@documents</span>,
-    <span class="ruby-identifier">e</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@error</span>,
-    <span class="ruby-identifier">i</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@id</span>,
-    <span class="ruby-identifier">l</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@relations</span>,
-    <span class="ruby-identifier">o</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@roles</span>,
-    <span class="ruby-identifier">p</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@param</span>,
-    <span class="ruby-identifier">q</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@query</span>,
-    <span class="ruby-identifier">r</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@rules</span>,
-    <span class="ruby-identifier">t</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@topic</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@topics</span>,
-    <span class="ruby-identifier">y</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@types</span>
-  }.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">v</span> })
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- do_json-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- do_json-method -->
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-doc_to_s" class="method-detail ">
@@ -543,7 +164,7 @@
 
           
           <div class="method-source-code" id="doc_to_s-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 328</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 300</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">doc_to_s</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>)
   <span class="ruby-identifier">a</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">u</span>, <span class="ruby-identifier">y</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">settings</span>.<span class="ruby-identifier">document_keys</span>)
 
@@ -560,14 +181,14 @@
 
   <span class="ruby-identifier">h</span>(<span class="ruby-identifier">s</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- doc_to_s-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- doc_to_s-method -->
+      </div>
 
     
       <div id="method-i-get_documents" class="method-detail ">
@@ -589,18 +210,18 @@
 
           
           <div class="method-source-code" id="get_documents-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 297</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 269</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_documents</span>(<span class="ruby-identifier">topics</span> = <span class="ruby-ivar">@topics</span>)
   <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">topic_index</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">topics</span>).<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:merge</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- get_documents-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- get_documents-method -->
+      </div>
 
     
       <div id="method-i-get_topic_maps" class="method-detail ">
@@ -622,7 +243,7 @@
 
           
           <div class="method-source-code" id="get_topic_maps-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 280</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 252</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_topic_maps</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">topic</span> = <span class="ruby-ivar">@topic</span>, <span class="ruby-identifier">hash</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">str</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">hash</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{name}&quot;</span>)
   <span class="ruby-identifier">str</span>  <span class="ruby-operator">||=</span> <span class="ruby-constant">Ontopia</span><span class="ruby-operator">::</span><span class="ruby-constant">Topicmaps</span>.<span class="ruby-identifier">id_stringifier</span>
@@ -639,14 +260,14 @@
 <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
   <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">err</span>.<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- get_topic_maps-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- get_topic_maps-method -->
+      </div>
 
     
       <div id="method-i-get_topics" class="method-detail ">
@@ -668,21 +289,21 @@
 
           
           <div class="method-source-code" id="get_topics-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 273</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 245</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_topics</span>(<span class="ruby-identifier">query</span> = <span class="ruby-ivar">@query</span>, <span class="ruby-identifier">param</span> = <span class="ruby-ivar">@param</span>, <span class="ruby-identifier">rules</span> = <span class="ruby-ivar">@rules</span>)
   <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">otm</span>.<span class="ruby-identifier">query</span>(<span class="ruby-identifier">settings</span>.<span class="ruby-identifier">tolog</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">rules</span>, <span class="ruby-node">&quot;$#{param}&quot;</span>, <span class="ruby-identifier">query</span>])
 <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
   <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">err</span>.<span class="ruby-identifier">to_s</span>
   []
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- get_topics-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- get_topics-method -->
+      </div>
 
     
       <div id="method-i-link_to_document" class="method-detail ">
@@ -704,18 +325,18 @@
 
           
           <div class="method-source-code" id="link_to_document-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 349</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 321</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">link_to_document</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>)
-  <span class="ruby-identifier">_a</span>(<span class="ruby-identifier">doc_to_s</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>), <span class="ruby-identifier">href</span><span class="ruby-operator">:</span> <span class="ruby-identifier">url</span>(<span class="ruby-node">&quot;/document/#{h(id)}&quot;</span>))
+  <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">doc_to_s</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>), <span class="ruby-value">:document</span>, <span class="ruby-identifier">id</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- link_to_document-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- link_to_document-method -->
+      </div>
 
     
       <div id="method-i-link_to_topic" class="method-detail ">
@@ -737,18 +358,18 @@
 
           
           <div class="method-source-code" id="link_to_topic-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 345</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 317</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>, <span class="ruby-identifier">text</span> = <span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">topic</span>))
-  <span class="ruby-identifier">_a</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">href</span><span class="ruby-operator">:</span> <span class="ruby-identifier">url</span>(<span class="ruby-node">&quot;/topic/#{h(topic)}&quot;</span>))
+  <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-value">:topic</span>, <span class="ruby-identifier">topic</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- link_to_topic-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- link_to_topic-method -->
+      </div>
 
     
       <div id="method-i-render_documents" class="method-detail ">
@@ -770,21 +391,21 @@
 
           
           <div class="method-source-code" id="render_documents-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 309</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 281</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_documents</span>(<span class="ruby-identifier">documents</span> = <span class="ruby-ivar">@documents</span>)
   <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">documents</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:documents</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_document</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>),
       <span class="ruby-string">&#39;data-index&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">doc_to_s</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>).<span class="ruby-identifier">downcase</span>)
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- render_documents-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- render_documents-method -->
+      </div>
 
     
       <div id="method-i-render_topics" class="method-detail ">
@@ -806,7 +427,7 @@
 
           
           <div class="method-source-code" id="render_topics-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 301</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 273</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_topics</span>(<span class="ruby-identifier">topics</span> = <span class="ruby-ivar">@topics</span>)
   <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">topics</span>.<span class="ruby-identifier">sort</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:topics</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>),
@@ -814,14 +435,14 @@
       <span class="ruby-string">&#39;data-index&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">topic</span>).<span class="ruby-identifier">downcase</span>)
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- render_topics-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- render_topics-method -->
+      </div>
 
     
       <div id="method-i-render_topics_hash" class="method-detail ">
@@ -843,7 +464,7 @@
 
           
           <div class="method-source-code" id="render_topics_hash-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 316</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 288</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_topics_hash</span>(<span class="ruby-identifier">hash</span>)
   <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">k</span>), <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>] }.<span class="ruby-identifier">sort</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">name</span>),
@@ -851,14 +472,14 @@
         <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>)) })
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- render_topics_hash-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- render_topics_hash-method -->
+      </div>
 
     
       <div id="method-i-sample_link" class="method-detail ">
@@ -880,20 +501,69 @@
 
           
           <div class="method-source-code" id="sample_link-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 353</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 325</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sample_link</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">tolog_sample</span>[<span class="ruby-identifier">name</span>]
     <span class="ruby-node">%Q{ [#{_a(:sample, href: &quot;javascript:sample(&#39;#{name}&#39;)&quot;)}]}</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- sample_link-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- sample_link-method -->
+      </div>
+
+    
+      <div id="method-i-to_render_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_render_hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="to_render_hash-source">
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_render_hash</span>
+  <span class="ruby-keyword">super</span>(
+    <span class="ruby-identifier">d</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@document</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@documents</span>,
+    <span class="ruby-identifier">e</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@error</span>,
+    <span class="ruby-identifier">i</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@id</span>,
+    <span class="ruby-identifier">l</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@relations</span>,
+    <span class="ruby-identifier">o</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@roles</span>,
+    <span class="ruby-identifier">p</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@param</span>,
+    <span class="ruby-identifier">q</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@query</span>,
+    <span class="ruby-identifier">r</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@rules</span>,
+    <span class="ruby-identifier">t</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@topic</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@topics</span>,
+    <span class="ruby-identifier">y</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@types</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
 
     
       <div id="method-i-topic_to_s" class="method-detail ">
@@ -915,30 +585,29 @@
 
           
           <div class="method-source-code" id="topic_to_s-source">
-            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 324</span>
+            <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 296</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">topic</span>)
   <span class="ruby-identifier">h</span>(<span class="ruby-identifier">settings</span>.<span class="ruby-identifier">topics</span>[<span class="ruby-identifier">topic</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">&#39;_&#39;</span>, <span class="ruby-string">&#39; &#39;</span>))
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- topic_to_s-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- topic_to_s-method -->
+      </div>
 
     
-    </section><!-- private-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
