@@ -2,6 +2,10 @@
 
 = Revision history for ontopia-tldr
 
+== 0.0.4 [2014-04-15]
+
+* Internal refactoring.
+
 == 0.0.3 [2013-10-24]
 
 * Fixed sample link display.

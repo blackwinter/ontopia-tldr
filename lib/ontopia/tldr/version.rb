@@ -3,7 +3,7 @@
 #                                                                             #
 # ontopia-tldr -- Tolog Document Retrieval with Ontopia.                      #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # ontopia-tldr is free software: you can redistribute it and/or modify it     #
 # under the terms of the GNU Affero General Public License as published by    #
@@ -28,7 +28,7 @@ module Ontopia
 
       MAJOR = 0
       MINOR = 0
-      TINY  = 3
+      TINY  = 4
 
       class << self
 
