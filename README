@@ -82,11 +82,11 @@ Ontopia::TLDR requires JRuby[http://jruby.org]. It has been tested with jruby
 
 == LINKS
 
+Ontopia::       http://ontopia.net/
+Demo::          http://ixtrieve.fh-koeln.de/ghn
 Documentation:: https://blackwinter.github.io/ontopia-tldr/
 Source code::   https://github.com/blackwinter/ontopia-tldr
 RubyGem::       https://rubygems.org/gems/ontopia-tldr
-Ontopia::       http://ontopia.net/
-Demo::          http://ixtrieve.fh-koeln.de/ghn
 
 
 == AUTHORS
