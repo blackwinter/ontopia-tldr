@@ -23,7 +23,7 @@ own <tt>config.ru</tt> file; e.g. (see Ontopia::TLDR for available options):
 
   require 'ontopia/tldr'
 
-  Ontopia::TLDR.set(
+  run Ontopia::TLDR.set(
     dbm_file: File.expand_path('../tldr.dbm', __FILE__),
     xtm_file: File.expand_path('../tldr.xtm', __FILE__),
 
@@ -32,8 +32,6 @@ own <tt>config.ru</tt> file; e.g. (see Ontopia::TLDR for available options):
 
     title: 'YOUR TITLE'
   )
-
-  run Ontopia::TLDR
 
 Assuming the following directory layout:
 

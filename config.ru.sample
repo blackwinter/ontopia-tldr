@@ -1,6 +1,6 @@
 require 'ontopia/tldr'
 
-Ontopia::TLDR.set(
+run Ontopia::TLDR.set(
   #xtm_file: '...',
   #dbm_file: '...',
 
@@ -9,5 +9,3 @@ Ontopia::TLDR.set(
 
   #title: '...'
 )
-
-run Ontopia::TLDR
