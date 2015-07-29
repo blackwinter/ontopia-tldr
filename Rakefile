@@ -4,17 +4,17 @@ begin
   require 'hen'
 
   Hen.lay! {{
-    :gem => {
-      :name         => %q{ontopia-tldr},
-      :version      => Ontopia::TLDR::VERSION,
-      :summary      => %q{Tolog Document Retrieval with Ontopia.},
-      :author       => %q{Jens Wille},
-      :email        => %q{jens.wille@gmail.com},
-      :license      => %q{AGPL-3.0},
-      :homepage     => :blackwinter,
-      :platform     => 'java',
-      :dependencies => %w[midos ontopia-topicmaps sinatra-bells],
-      :extra_files  => FileList['*.sample', 'lib/ontopia/tldr/{public,views}/*'].to_a
+    gem: {
+      name:         %q{ontopia-tldr},
+      version:      Ontopia::TLDR::VERSION,
+      summary:      %q{Tolog Document Retrieval with Ontopia.},
+      author:       %q{Jens Wille},
+      email:        %q{jens.wille@gmail.com},
+      license:      %q{AGPL-3.0},
+      homepage:     :blackwinter,
+      platform:     'java',
+      dependencies: %w[midos ontopia-topicmaps sinatra-bells],
+      extra_files:  FileList['*.sample', 'lib/ontopia/tldr/{public,views}/*'].to_a
     }
   }}
 rescue LoadError => err
