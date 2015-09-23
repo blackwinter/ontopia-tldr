@@ -13,8 +13,12 @@ begin
       license:      %q{AGPL-3.0},
       homepage:     :blackwinter,
       platform:     'java',
-      dependencies: %w[midos ontopia-topicmaps sinatra-bells],
-      extra_files:  FileList['*.sample', 'lib/ontopia/tldr/{public,views}/*'].to_a
+      extra_files:  FileList['*.sample', 'lib/ontopia/tldr/{public,views}/*'].to_a,
+      dependencies: {
+        'midos'             => '~> 0.2',
+        'ontopia-topicmaps' => ['~> 0.0', '>= 0.0.4'],
+        'sinatra-bells'     => '~> 0.1'
+      }
     }
   }}
 rescue LoadError => err

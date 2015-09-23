@@ -12,9 +12,9 @@
   <h1><%=h title %></h1>
 
   <div id="header">
-    <%= _a 'Topics',    href: url('/topics') %>    (<%= _a 'XTM', href: url('/xtm') %>) |
-    <%= _a 'Documents', href: url('/documents') %> (<%= _a 'DBM', href: url('/dbm') %>) |
-    <%= _a 'New query', href: url('/') %>
+    <%= a_ 'Topics',    href: url('/topics') %>    (<%= a_ 'XTM', href: url('/xtm') %>) |
+    <%= a_ 'Documents', href: url('/documents') %> (<%= a_ 'DBM', href: url('/dbm') %>) |
+    <%= a_ 'New query', href: url('/') %>
   <% if @filter && !instance_variable_get("@#{@filter}").empty? %>
     | <form><input onkeyup="filter(this.value, '<%=h @filter %>');" placeholder="Filter <%=h @filter %>..." /></form>
   <% end %>

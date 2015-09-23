@@ -5,7 +5,7 @@
 #                                                                             #
 # ontopia-tldr -- Tolog Document Retrieval with Ontopia.                      #
 #                                                                             #
-# Copyright (C) 2013-2014 Jens Wille                                          #
+# Copyright (C) 2013-2015 Jens Wille                                          #
 #                                                                             #
 # ontopia-tldr is free software: you can redistribute it and/or modify it     #
 # under the terms of the GNU Affero General Public License as published by    #
@@ -272,25 +272,25 @@ select $TYPE, $TOPIC from
     end
 
     def render_topics(topics = @topics)
-      _ul(topics.sort, id: :topics) { |topic|
-        _li(link_to_topic(topic),
+      ul_(topics.sort, id: :topics) { |topic|
+        li_(link_to_topic(topic),
           ' (', settings.topic_index[topic].size, ')',
           'data-index' => topic_to_s(topic).downcase)
       }
     end
 
     def render_documents(documents = @documents)
-      _ul(documents.sort_by { |k,| k }, id: :documents) { |id, doc|
-        _li(link_to_document(id, doc),
+      ul_(documents.sort_by { |k,| k }, id: :documents) { |id, doc|
+        li_(link_to_document(id, doc),
           'data-index' => doc_to_s(id, doc).downcase)
       }
     end
 
     def render_topics_hash(hash)
-      _ul(hash.map { |k, v| [topic_to_s(k), k, v] }.sort) { |name, key, value|
-        _li(link_to_topic(key, name),
+      ul_(hash.map { |k, v| [topic_to_s(k), k, v] }.sort) { |name, key, value|
+        li_(link_to_topic(key, name),
           value.is_a?(Hash) ? render_topics_hash(value) :
-            _ul(value.sort.uniq) { |topic| _li(link_to_topic(topic)) })
+            ul_(value.sort.uniq) { |topic| li_(link_to_topic(topic)) })
       }
     end
 
