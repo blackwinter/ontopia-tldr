@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.0.4)</title>
-
-<link href="../fonts.css" rel="stylesheet">
-<link href="../rdoc.css" rel="stylesheet">
+<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.1.0)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
 </script>
 
 <script src="../js/jquery.js"></script>
-<script src="../js/navigation.js"></script>
-<script src="../js/search_index.js"></script>
-<script src="../js/search.js"></script>
-<script src="../js/searcher.js"></script>
 <script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="class">
@@ -393,8 +390,8 @@
           <div class="method-source-code" id="render_documents-source">
             <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 281</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_documents</span>(<span class="ruby-identifier">documents</span> = <span class="ruby-ivar">@documents</span>)
-  <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">documents</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:documents</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_document</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>),
+  <span class="ruby-identifier">ul_</span>(<span class="ruby-identifier">documents</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:documents</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">li_</span>(<span class="ruby-identifier">link_to_document</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>),
       <span class="ruby-string">&#39;data-index&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">doc_to_s</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">doc</span>).<span class="ruby-identifier">downcase</span>)
   }
 <span class="ruby-keyword">end</span></pre>
@@ -429,8 +426,8 @@
           <div class="method-source-code" id="render_topics-source">
             <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 273</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_topics</span>(<span class="ruby-identifier">topics</span> = <span class="ruby-ivar">@topics</span>)
-  <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">topics</span>.<span class="ruby-identifier">sort</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:topics</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>),
+  <span class="ruby-identifier">ul_</span>(<span class="ruby-identifier">topics</span>.<span class="ruby-identifier">sort</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-value">:topics</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">li_</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>),
       <span class="ruby-string">&#39; (&#39;</span>, <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">topic_index</span>[<span class="ruby-identifier">topic</span>].<span class="ruby-identifier">size</span>, <span class="ruby-string">&#39;)&#39;</span>,
       <span class="ruby-string">&#39;data-index&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">topic</span>).<span class="ruby-identifier">downcase</span>)
   }
@@ -466,10 +463,10 @@
           <div class="method-source-code" id="render_topics_hash-source">
             <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 288</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">render_topics_hash</span>(<span class="ruby-identifier">hash</span>)
-  <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">k</span>), <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>] }.<span class="ruby-identifier">sort</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">name</span>),
+  <span class="ruby-identifier">ul_</span>(<span class="ruby-identifier">hash</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">topic_to_s</span>(<span class="ruby-identifier">k</span>), <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>] }.<span class="ruby-identifier">sort</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">li_</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">name</span>),
       <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">render_topics_hash</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">:</span>
-        <span class="ruby-identifier">_ul</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span> <span class="ruby-identifier">_li</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>)) })
+        <span class="ruby-identifier">ul_</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">topic</span><span class="ruby-operator">|</span> <span class="ruby-identifier">li_</span>(<span class="ruby-identifier">link_to_topic</span>(<span class="ruby-identifier">topic</span>)) })
   }
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -607,7 +604,7 @@
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
