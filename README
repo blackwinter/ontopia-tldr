@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to ontopia-tldr version 0.0.4
+This documentation refers to ontopia-tldr version 0.1.0
 
 
 == DESCRIPTION
@@ -96,7 +96,7 @@ RubyGem::       https://rubygems.org/gems/ontopia-tldr
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2013-2014 Jens Wille
+Copyright (C) 2013-2015 Jens Wille
 
 ontopia-tldr is free software: you can redistribute it and/or modify it
 under the terms of the GNU Affero General Public License as published by
