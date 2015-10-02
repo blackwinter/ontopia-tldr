@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: ontopia-tldr 0.1.0 java lib
+# stub: ontopia-tldr 0.1.1 java lib
 
 Gem::Specification.new do |s|
   s.name = "ontopia-tldr"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.platform = "java"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.files = ["COPYING", "ChangeLog", "README", "Rakefile", "config.ru.sample", "lib/ontopia-tldr.rb", "lib/ontopia/tldr.rb", "lib/ontopia/tldr/public/site.css", "lib/ontopia/tldr/public/site.js", "lib/ontopia/tldr/version.rb", "lib/ontopia/tldr/views/document.erb", "lib/ontopia/tldr/views/documents.erb", "lib/ontopia/tldr/views/index.erb", "lib/ontopia/tldr/views/layout.erb", "lib/ontopia/tldr/views/topic.erb", "lib/ontopia/tldr/views/topics.erb"]
   s.homepage = "http://github.com/blackwinter/ontopia-tldr"
   s.licenses = ["AGPL-3.0"]
-  s.post_install_message = "\nontopia-tldr-0.1.0 [2015-10-02]:\n\n* Minor refactoring.\n\n"
-  s.rdoc_options = ["--title", "ontopia-tldr Application documentation (v0.1.0)", "--charset", "UTF-8", "--line-numbers", "--all", "--main", "README"]
+  s.post_install_message = "\nontopia-tldr-0.1.1 [2015-10-02]:\n\n* Fix for sinatra-bells 0.1.\n\n"
+  s.rdoc_options = ["--title", "ontopia-tldr Application documentation (v0.1.1)", "--charset", "UTF-8", "--line-numbers", "--all", "--main", "README"]
   s.rubygems_version = "2.4.8"
   s.summary = "Tolog Document Retrieval with Ontopia."
 
