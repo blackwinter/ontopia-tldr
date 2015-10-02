@@ -325,7 +325,7 @@ select $TYPE, $TOPIC from
 
     def sample_link(name)
       if settings.tolog_sample[name]
-        %Q{ [#{_a(:sample, href: "javascript:sample('#{name}')")}]}
+        %Q{ [#{a_(:sample, href: "javascript:sample('#{name}')")}]}
       end
     end
 
