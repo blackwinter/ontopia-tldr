@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.1.0)</title>
+<title>class Ontopia::TLDR - ontopia-tldr Application documentation (v0.1.1)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -501,7 +501,7 @@
             <pre><span class="ruby-comment"># File lib/ontopia/tldr.rb, line 325</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sample_link</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">tolog_sample</span>[<span class="ruby-identifier">name</span>]
-    <span class="ruby-node">%Q{ [#{_a(:sample, href: &quot;javascript:sample(&#39;#{name}&#39;)&quot;)}]}</span>
+    <span class="ruby-node">%Q{ [#{a_(:sample, href: &quot;javascript:sample(&#39;#{name}&#39;)&quot;)}]}</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
