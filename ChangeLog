@@ -2,6 +2,10 @@
 
 = Revision history for ontopia-tldr
 
+== 0.1.2 [2015-11-18]
+
+* Updated for sinatra-bells 0.2.
+
 == 0.1.1 [2015-10-02]
 
 * Fix for sinatra-bells 0.1.
