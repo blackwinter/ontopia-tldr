@@ -17,7 +17,7 @@ begin
       dependencies: {
         'midos'             => '~> 0.2',
         'ontopia-topicmaps' => ['~> 0.0', '>= 0.0.4'],
-        'sinatra-bells'     => '~> 0.1'
+        'sinatra-bells'     => '~> 0.2'
       }
     }
   }}

@@ -273,24 +273,24 @@ select $TYPE, $TOPIC from
 
     def render_topics(topics = @topics)
       ul_(topics.sort, id: :topics) { |topic|
-        li_(link_to_topic(topic),
+        [link_to_topic(topic),
           ' (', settings.topic_index[topic].size, ')',
-          'data-index' => topic_to_s(topic).downcase)
+          'data-index' => topic_to_s(topic).downcase]
       }
     end
 
     def render_documents(documents = @documents)
       ul_(documents.sort_by { |k,| k }, id: :documents) { |id, doc|
-        li_(link_to_document(id, doc),
-          'data-index' => doc_to_s(id, doc).downcase)
+        [link_to_document(id, doc),
+          'data-index' => doc_to_s(id, doc).downcase]
       }
     end
 
     def render_topics_hash(hash)
       ul_(hash.map { |k, v| [topic_to_s(k), k, v] }.sort) { |name, key, value|
-        li_(link_to_topic(key, name),
+        [link_to_topic(key, name),
           value.is_a?(Hash) ? render_topics_hash(value) :
-            ul_(value.sort.uniq) { |topic| li_(link_to_topic(topic)) })
+            ul_(value.sort.uniq) { |topic| link_to_topic(topic) }]
       }
     end
 
