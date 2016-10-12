@@ -1,4 +1,4 @@
-require File.expand_path(%q{../lib/ontopia/tldr/version}, __FILE__)
+require_relative 'lib/ontopia/tldr/version'
 
 begin
   require 'hen'
